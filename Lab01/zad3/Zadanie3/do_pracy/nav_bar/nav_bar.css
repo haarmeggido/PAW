@@ -3,6 +3,20 @@ body {
 	margin: 0;
 	padding: 20px;
 }
+.horizontal{
+    padding:40px 80px 80px 40px;
+    border:3px solid grey;
+    background-color:lightyellow;
+    height: fit-content;
+    width: fit-content;
+}
+.vertical{
+    padding:40px 80px 60px 40px;
+    background-color: powderblue;
+    border:3px solid grey;
+    height: fit-content;
+    width: fit-content;
+}
 .h li{
     float: left;
     border: 1px dashed grey;
@@ -20,13 +34,33 @@ body {
     font-size: 12px;
 }
 
+.h li:nth-child(even){
+    border-right: none;
+    border-left: none;
+    }
+.h li:last-child{
+    border-right: 1px dashed grey;
+    }
 .v li{
     border: 1px dashed grey;
     list-style-position: inside;
     background-color: rgb(235, 248, 249);
     width: 150px;
 }
-
+a{
+    vertical-align: 5px;
+}
+.v .bg a{
+    vertical-align: 2px;
+    padding-left: 30px;
+}
+.v li:nth-child(even){
+border-top: none;
+border-bottom: none;
+}
+.v li:last-child{
+    border-bottom: 1px dashed grey;
+    }
 .v li a:link,.v li a:visited{
     text-decoration: none;
     color: black;
@@ -46,5 +80,18 @@ body {
 .v li:hover, .v li:active, .h li:hover, .h li:active{
     background-color: rgb(33,255,33);
     list-style-image: url('images/go.png');
+    font-weight: bold;
+    cursor: pointer;
 }
-
+.v li.bg{
+    background: url(images/bg_here.png) no-repeat right;
+    background-color: rgb(255,255,255); /* <-- change `left` & `top` too for extra control */
+    padding: 4px 0px 3px 0px;
+    /* reset styles (optional): */
+    list-style: none;
+    margin: 0;
+}
+.v li.bg:hover, .v li.bg:active{
+    background: url(images/go.png) no-repeat right; /* <-- change `left` & `top` too for extra control */
+    background-color: rgb(33,255,33); 
+}
