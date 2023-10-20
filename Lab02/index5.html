@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Alignment: aligning individual items on the cross axis</title>
+    <link rel="stylesheet" href="styles/s-05.css">
+</head>
+
+<body>
+
+</body>
+    <header id = "header">
+        <div class = "Mondo" onclick="album_mondo()">
+            <img src = "files/emblems/Emblem_Mondstadt.png">
+        </div>
+        <div class ="Liyue"  onclick="album_liyue()">
+            <img src = "files/emblems/Emblem_Liyue.png">
+        </div>
+        <div class = "Inazuma"  onclick="album_inazuma()">
+            <img src = "files/emblems/Emblem_Inazuma.png">
+        </div>
+        <div class = "Sumeru"  onclick="album_sumeru()">
+            <img src = "files/emblems/Emblem_Sumeru.png">
+        </div>
+        <div class = "Fontaine"  onclick="album_fontaine()">
+            <img src = "files/emblems/Emblem_Fontaine.png">
+        </div>
+
+
+
+
+    </header>
+    <main id = "main">
+        <figure class = photo>
+            <img class = "photo-img" id = "p1" src = "files/f1.webp">
+            <div class = "photo-desc">
+                <p class = "photo-title">Mucho texto 1</p>
+                <p>Mucho texto 2</p>
+            </div>
+        </figure>
+        <figure class = photo>
+            <img class = "photo-img" id = "p2" src = "files/f2.webp">
+            <div class = "photo-desc">
+                <p class = "photo-title">Mucho texto 1</p>
+                <p>Mucho texto 2</p>
+            </div>
+        </figure>
+        <figure class = photo>
+            <img class = "photo-img" id = "p3" src = "files/f3.webp">
+            <div class = "photo-desc">
+                <p class = "photo-title">Mucho texto 1</p>
+                <p>Mucho texto 2</p>
+            </div>
+        </figure>
+        <figure class = photo>
+            <img class = "photo-img" id = "p4" src = "files/f4.webp">
+            <div class = "photo-desc">
+                <p class = "photo-title">Mucho texto 1</p>
+                <p>Mucho texto 2</p>
+            </div>
+        </figure>
+        <figure class = photo>
+            <img class = "photo-img" id = "p5" src = "files/f5.webp">
+            <div class = "photo-desc">
+                <p class = "photo-title">Mucho texto 1</p>
+                <p>Mucho texto 2</p>
+            </div>
+        </figure>
+        <figure class = photo>
+            <img class = "photo-img" id = "p6" src = "files/f6.webp">
+            <div class = "photo-desc">
+                <p class = "photo-title">Mucho texto 1</p>
+                <p>Mucho texto 2</p>
+            </div>
+        </figure>
+    </main>
+
+    <script>
+        var image1 = document.getElementById("p1");
+        var image2 = document.getElementById("p2");
+        var image3 = document.getElementById("p3");
+        var image4 = document.getElementById("p4");
+        var image5 = document.getElementById("p5");
+        var image6 = document.getElementById("p6");
+
+        var main = 
+
+        console.log(image1);
+        function album_mondo(){
+            document.getElementById("header").style['background-color'] = 
+            document.getElementsByClassName("Mondo")[0].style['background-color'];
+            document.getElementById("main").style['background-color'] = 'rgb(0, 227, 121)';
+            image1.src = "files/m1.webp"
+            image2.src = "files/m2.webp"
+            image3.src = "files/m3.webp"
+            image4.src = "files/m4.webp"
+            image5.src = "files/m5.webp"
+            image6.src = "files/m6.webp" 
+        }
+        function album_liyue(){
+            document.getElementById("main").style['background-color'] = 'rgb(240, 200, 58)';
+            document.getElementsByClassName
+            image1.src = "files/l1.webp"
+            image2.src = "files/l2.webp"
+            image3.src = "files/l3.webp"
+            image4.src = "files/l4.webp"
+            image5.src = "files/l5.webp"
+            image6.src = "files/l6.webp" 
+        }
+        function album_inazuma(){
+            document.getElementById("main").style['background-color'] = 'rgb(184, 61, 188)';
+            image1.src = "files/i1.webp"
+            image2.src = "files/i2.webp"
+            image3.src = "files/i3.webp"
+            image4.src = "files/i4.webp"
+            image5.src = "files/i5.webp"
+            image6.src = "files/i6.webp" 
+        }
+        function album_sumeru(){
+            document.getElementById("main").style['background-color'] = 'rgb(59, 208, 69)';
+            image1.src = "files/s1.webp"
+            image2.src = "files/s2.webp"
+            image3.src = "files/s3.webp"
+            image4.src = "files/s4.webp"
+            image5.src = "files/s5.webp"
+            image6.src = "files/s6.webp" 
+        }
+        function album_fontaine(){
+            document.getElementById("main").style['background-color'] = 'rgb(7, 163, 215)';
+            image1.src = "files/f1.webp"
+            image2.src = "files/f2.webp"
+            image3.src = "files/f3.webp"
+            image4.src = "files/f4.webp"
+            image5.src = "files/f5.webp"
+            image6.src = "files/f6.webp" 
+        }
+    </script>
+</html>

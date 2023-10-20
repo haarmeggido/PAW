@@ -1,0 +1,38 @@
+section{
+    margin:10%;
+}
+.box{
+    display: flex;
+    flex-direction: row;
+    height: 120px;
+    width: 300px;
+    align-items: flex-start;
+    border:1px solid blue;
+    padding: 12px;
+    padding-top:1px;
+    padding-left: 1px;
+}
+.box div{
+    background-color: rgb(165, 213, 238);
+    border:1px solid rgb(0, 72, 255);
+    padding: 10px;
+    
+}
+.horizontal .box div:first-child{
+ height: 100%;   
+ padding-bottom: 0;
+}
+.box .selected{
+    align-self: center;;
+}
+
+.vertical .box{
+    flex-direction: column;
+    height: 200px;
+    width: 160px;
+}
+.vertical .box div:first-child{
+    width: 100%;
+    
+    padding-right: 0;
+   }
