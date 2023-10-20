@@ -1,0 +1,25 @@
+.box{
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+    align-items: center;
+    justify-content: space-between;
+    padding:100px;
+}
+.box div{
+    margin: 5px;
+    padding: 20px;
+    border: 1px solid black;
+}
+.red{
+    width: 24%;
+    background-color: red;
+}
+.blue{
+    width: 48%;
+    background-color: lightblue;
+}
+.yellow{
+    width: 90%;
+    background-color: yellow;
+}

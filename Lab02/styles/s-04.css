@@ -1,0 +1,30 @@
+.grid{
+    height: 400px;
+    width: 800px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "a1 a2 a2"
+    "a3 a2 a2"
+    "a3 a0 a4"
+    "a3 a5 a6";
+    gap: 10px;
+}
+.grid div{
+    color:rgb(130, 84, 0);
+    border:2px solid rgb(242, 157, 0);
+    border-radius: 4px;
+    padding: 10px;
+    opacity: 0.5;
+    background-color: rgb(255, 205, 111);
+}
+.o1{
+    grid-row: 1;
+    grid-column: 1/-2
+}
+.o2{ grid-area: a2}
+.o3{ grid-area: a3}
+.o4{ grid-area: a4}
+.o5{ grid-area: a5}
+.o6{ grid-area: a6}
