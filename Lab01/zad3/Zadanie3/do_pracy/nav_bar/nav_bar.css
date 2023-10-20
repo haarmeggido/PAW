@@ -43,8 +43,13 @@ body {
 .v li.link, .h li.link {
     list-style-image: url('images/link.png');
 }
+.v li.bg{
+    position:fixed;
+    right:1px;
+}
 .v li:hover, .v li:active, .h li:hover, .h li:active{
     background-color: rgb(33,255,33);
     list-style-image: url('images/go.png');
+    font-weight: bold;
 }
 
