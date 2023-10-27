@@ -12,6 +12,11 @@
 
 </body>
     <header id = "header">
+        <div class = "logo" onclick="album_mondo()" href = "www.hoyolab.com">
+            <a href = "http://www.hoyolab.com">
+                <img src = "files/GenLogo.png">
+            </a>
+        </div>
         <div class = "Mondo" onclick="album_mondo()">
             <img src = "files/emblems/Emblem_Mondstadt.png">
         </div>
@@ -91,7 +96,7 @@
         function album_mondo(){
             document.getElementById("header").style['background-color'] = 
             document.getElementsByClassName("Mondo")[0].style['background-color'];
-            document.getElementById("main").style['background-color'] = 'rgb(0, 227, 121)';
+            document.getElementById("main").style['background-color'] = "rgb(20, 226, 175)";
             image1.src = "files/m1.webp"
             image2.src = "files/m2.webp"
             image3.src = "files/m3.webp"
@@ -100,7 +105,7 @@
             image6.src = "files/m6.webp" 
         }
         function album_liyue(){
-            document.getElementById("main").style['background-color'] = 'rgb(240, 200, 58)';
+            document.getElementById("main").style['background-color'] = 'rgb(209, 185, 48)';
             document.getElementsByClassName
             image1.src = "files/l1.webp"
             image2.src = "files/l2.webp"
@@ -110,7 +115,7 @@
             image6.src = "files/l6.webp" 
         }
         function album_inazuma(){
-            document.getElementById("main").style['background-color'] = 'rgb(184, 61, 188)';
+            document.getElementById("main").style['background-color'] = 'rgb(149, 44, 190)';
             image1.src = "files/i1.webp"
             image2.src = "files/i2.webp"
             image3.src = "files/i3.webp"

@@ -1,0 +1,6 @@
+done:
+  zad 0
+
+na_dziś_todo:
+  zad 3
+  zad 6
