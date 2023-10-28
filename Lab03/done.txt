@@ -1,5 +1,8 @@
 done:
   zad 0
+  zad 3
+  zad 6
+  zad 4
 
 na_dziś_todo:
   zad 3

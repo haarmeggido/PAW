@@ -1,0 +1,105 @@
+.background{
+    position: absolute;
+    top:-10%;
+    left: -10%;
+    z-index: -1;
+    background-color: rgb(81, 81, 250);
+    width: 150%;
+    height: 60%;
+    transform: rotate(-3deg);
+}
+main{
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+}
+.welcome{
+    display: flex;
+    flex-direction: column;
+    color:white;
+    align-items:flex-start;
+    padding: 10% 10%;
+    justify-content: space-between;
+
+    animation: cssAnimation_0 1000ms 1 ease-out;
+
+}
+.welcome .title{
+ font-size: 28px;
+}
+.welcome .content{
+    font-weight: 100;
+}
+.welcome button{
+    background-color: rgb(83, 83, 255);
+    border:1px solid white;
+    color:white;
+    border-radius: 10%;
+    padding:15px 30px;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin:10%;
+    background-color: white;
+    border:1px solid gray;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.15);
+    padding: 5% 10%;
+    animation: cssAnimation_1 1000ms 1 ease-out;
+    min-height: 50%;
+}
+.form p{
+    font-size: 18px;
+}
+.form input{
+    border: none;
+    border-bottom: 1px solid gray;
+}
+.form button{
+    align-self:flex-start;
+    color: white;
+    background-color: rgb(83, 83, 255);
+    padding: 5px 10px;
+    border: none;
+    border-radius: 6px;
+}
+
+@keyframes cssAnimation_0 {
+from {
+    transform: translate(-40%, 0px);
+}
+}
+
+@keyframes cssAnimation_1 {
+from {
+    transform: translate(40%, 0px);
+}
+}
+
+@keyframes cssAnimation_2 {
+from {
+    transform: translate(0px, -40%);
+}
+}
+
+@keyframes cssAnimation_3 {
+from {
+    transform: translate(0px, 40%);
+}
+}
+
+@media (max-width: 1000px) {
+.background{
+    height: 80%;
+}
+
+main{
+    grid-template-columns: 1fr;
+}
+.welcome{
+    animation: cssAnimation_2 1000ms 1 ease-out;
+}
+.form{
+    animation: cssAnimation_3 1000ms 1 ease-out;
+}
+}
