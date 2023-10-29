@@ -4,29 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Test FlexBox Effect</title>
     <link rel="stylesheet" media="screen" type="text/css" href="style.css">
+    <title>Navigation Bar with Dropdown Menu</title>
 </head>
 <body>
-    
-    <section>
-        <div>
-            <img src="images/image-1.jpg" alt="">
+    <div class = "fog"></div>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <div class="dropdown">
+            <button class="dropbtn">Menu</button>
+            <div class="dropdown-content">
+                <a href="#item1">Item 1</a>
+                <div class="nested-dropdown">
+                    <a href="#item2">Item 2 ></a>
+                    <div class="nested-dropdown-content">
+                        <a href="#subitem1">Subitem 1</a>
+                        <a href="#subitem2">Subitem 2 ></a>
+                        <a href="#subitem3">Subitem 3</a>
+                    </div>
+                </div>
+                <a href="#item3">Item 3</a>
+            </div>
         </div>
-        <div>
-            <img src="images/image-2.jpg" alt="">
-        </div>
-        <div>
-            <img src="images/image-3.jpg" alt="">
-        </div>
-        <div>
-            <img src="images/image-4.jpg" alt="">
-        </div>
-		<div>
-            <img src="images/image-4.jpg" alt="">
-        </div>
-
-    </section>
+    </div>
 
 </body>
 </html>
