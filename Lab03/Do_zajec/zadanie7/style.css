@@ -1,0 +1,96 @@
+/* original layout to 1000px
+next layout to 600px
+next layout below */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f1f1f1;
+}
+
+.video-call {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  position: relative;
+  background-color: #313131;
+}
+
+.video {
+  display: inline-block;
+  min-width: 500px;
+}
+#caller{
+  margin: auto;
+  height: 500px;
+  width: 400px;
+  object-fit: cover;
+  overflow:hidden;
+}
+
+.video-call img {
+  max-width: 100%;
+  max-height: 100%;
+
+  display: block;
+}
+
+.my-camera {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 200px;
+  height: 300px;
+}
+
+.icons-bar {
+  margin:auto;
+  margin-top: -50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  position:sticky;
+  top: 20px;
+}
+.icon {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 50%;
+  margin-right: 10px;
+  position: sticky;
+
+}
+.disconnect {
+  background-color: red;
+}
+/* not in project */
+.filler{
+  height: 2000px;
+  width: 1px;
+  background-color: #f1f1f1;
+}
+/* media queries 1000px/600px*/
+
+@media (max-width: 1000px){
+  .my-camera {
+    top: 10px;
+    left: 10px;
+    width: 100px;
+    height: 150px;
+  }
+}
+@media (max-width: 700px){
+  #caller {
+    width: 100%;
+  }
+} 

@@ -88,7 +88,7 @@ from {
 }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 600px) {
 .background{
     height: 80%;
 }
@@ -101,5 +101,6 @@ main{
 }
 .form{
     animation: cssAnimation_3 1000ms 1 ease-out;
+    height: 300px;
 }
 }

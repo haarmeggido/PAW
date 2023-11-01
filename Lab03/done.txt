@@ -1,9 +1,8 @@
 done:
   zad 0
   zad 3
-  zad 6
   zad 4
-
-na_dziś_todo:
-  zad 3
+  zad 5 -  TODO: ustawić mgłę
   zad 6
+  zad 7 -   TODO: fix icons position - sticky AND relative, top -50px AND top 20px
+  zad 8

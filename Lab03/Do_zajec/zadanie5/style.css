@@ -2,20 +2,22 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-image: url('images/image-1.jpg');
+    background-color: rgba(100,180,225,0.88);
+    background-image: url('images/bg.jpg');
+    background-blend-mode: overlay;
     background-size: cover;
     background-position: center;
     height: 100vh;
     position: relative;
 }
 
-/* Create a fog overlay using the ::before pseudo-element */
 
-/* Basic CSS for the navigation bar */
 .navbar {
     z-index: 20;
-    background-color: #333;
+    background-color: #0088d6;
     overflow: hidden;
+    display: flex;
+    justify-content: space-around;
 }
 
 .navbar a {
@@ -32,7 +34,6 @@ body {
     color: black;
 }
 
-/* CSS for the dropdown menu */
 .dropdown {
     float: left;
     overflow: hidden;
@@ -49,14 +50,15 @@ body {
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: #ddd;
-    color: black;
+    background-color: #0088d6;
+    color: white;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: white;
+    color: #0088d6;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -64,7 +66,7 @@ body {
 
 .dropdown-content a {
     float: none;
-    color: black;
+    color: #0088d6;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -72,23 +74,25 @@ body {
 }
 
 .dropdown-content a:hover {
-    background-color: #ddd;
+    background-color: #0088d6;
+    color: white;
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-/* CSS for the nested dropdown menu */
 .nested-dropdown {
     position: relative;
     display: inline-block;
+    width: 100%;
 }
 
 .nested-dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: white;
+    color: #0088d6;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -98,4 +102,37 @@ body {
 
 .nested-dropdown:hover .nested-dropdown-content {
     display: block;
+}
+
+/* CSS for buttons& all else */
+#brand{
+    font-size: 20px;
+}
+.buttons{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.15);
+}
+.buttons button{
+    padding: 5px 20px;
+    margin:10px 20px;
+        border-radius: 30px;
+}
+#login{
+    background-color: #0088d6;
+    border:1px solid white;
+    color: white;
+}
+
+#signup{
+    background-color: white;
+    border:none;
+    color: #0088d6;
+}
+#login:hover, #signup:hover{
+    opacity: 0.75;
+}
+#login:active, #signup:active{
+    opacity: 0.55;
 }
