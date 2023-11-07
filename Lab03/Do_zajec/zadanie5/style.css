@@ -136,3 +136,17 @@ body {
 #login:active, #signup:active{
     opacity: 0.55;
 }
+
+.top-triangle {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    right: 50px;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid rgb(230, 69, 63);
+    transition: border-top 0.15s;
+}
