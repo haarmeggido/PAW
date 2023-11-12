@@ -1,0 +1,47 @@
+
+.header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+.header div{
+  position: absolute;
+  padding: 10px;
+  padding-right: 50px;
+  left: 10px;
+  top: 10px;
+  border: 1px solid #fff;
+}
+
+.menu {
+  background-color: #f2f2f2;
+  text-align: center;
+  padding: 20px;
+}
+
+.left-column {
+  background-color: #e6e6e6;
+  text-align: center;
+  padding: 50px;
+}
+
+.content {
+  background-color: #fff;
+  text-align: center;
+  padding: 100px;
+}
+
+.right-column {
+  background-color: #e6e6e6;
+  text-align: center;
+  padding: 50px;
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
