@@ -1,0 +1,30 @@
+/* Center .main div */
+.users {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  margin-top: 20px;
+}
+.users>div{
+  width: 400px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(152, 187, 199);
+}
+
+body{
+  background-color: lightblue;
+}
+.clickVal{
+  margin:10px;
+  padding:40px 60px;
+  background-color: rgb(20, 33, 118);
+  color: whitesmoke;
+  font-size: 20px;
+  border-radius: 5px;
+}

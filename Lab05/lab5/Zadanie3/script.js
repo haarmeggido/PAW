@@ -19,7 +19,7 @@ function js_remove_element() {
 }
 
 function update_elements() {
-  list_html_string = itemarray.map(item => `<div>${item}</div>`).join('')
+  list_html_string = itemarray.map(item => `<p>${item}</p>`).join('')
   const elements = document.querySelector('.js-elements')
   elements.innerHTML = list_html_string
 }
