@@ -43,7 +43,7 @@ const isLessThan6 = numbers.some(number => number < 6);
 const incrementedNumbers = numbers.map(number => number + 1);
 const oddNumbers = incrementedNumbers.filter(number => number % 2 !== 0);
 const sumOfOddNumbers = oddNumbers.reduce((acc, curr) => acc + curr, 0);
-const result2 = `Is every number less than 9? ${isLessThan9}. Is there any number less than 6? ${isLessThan6}. Sum of odd numbers: ${sumOfOddNumbers}.`;
+const result2 = `Każdy < 9: ${isLessThan9} || Jakiś > 6: ${isLessThan6} || Suma nparz: ${sumOfOddNumbers}.`;
 const result2El = document.createElement('p');
 result2El.textContent = result2;
 document.getElementById('app').appendChild(result2El);
