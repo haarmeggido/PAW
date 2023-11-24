@@ -69,7 +69,7 @@ function sort3(row1, row2){
     const v1 = row1["density"];
     const v2 = row2["density"];
 
-    if (v1 < v2) return -1;
-    else if (v1 > v2) return 1;
+    if (v1 > v2) return -1;
+    else if (v1 < v2) return 1;
     else return 0;
 }
