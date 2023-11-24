@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zad 2</title>
+    <script src="Zad2.js" defer></script>
+    <link rel="stylesheet" href="Zad2.css">
+</head>
+<body>
+
+    <h1>Książka telefoniczna</h1>
+
+    <form id="contactForm">
+        <label for="name">Imię:</label>
+        <input type="text" id="name" name="name" required pattern="[A-Za-zĄĆĘŁŃÓŚŹŻąćęłńóśźż-]+" title="Imię może zawierać tylko litery i znak '-'">
+
+        <label for="phone">Numer telefonu:</label>
+        <input type="tel" id="phone" name="phone" required pattern="[+]?[0-9 -]{9,12}" title="Numer telefonu musi zawierać 9-12 cyfr i może zaczynać się od znaku '+'">
+
+        <button type="button" onclick="addContact()">Dodaj kontakt</button>
+    </form>
+
+    <div id="contactList"></div>
+</body>
+</html>
