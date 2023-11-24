@@ -14,22 +14,24 @@
 <body>
 <div >
   <div class = "container container-fluid justify-content-center align-items-center justify-content-start w-25 my-3">
-    <div class="outside bg-primary p-3 text-center">
-      1
-      <div class="middle bg-danger p-3">
-        2
-        <div class="inside bg-warning p-3">
-          3
+    <div class="outside bg-primary p-3 text-center rounded border">
+      +1 pkt
+      <div class="middle bg-danger p-3 text-center rounded border">
+        +2pkt
+        <div class="inside bg-warning p-3 text-center rounded border">
+          +5pkt
 
         </div>
       </div>
     </div>
   </div>
-  <div class = "span"></div>
-
-  <button class = "btn  btn-primary js-switch-propagation">stop propagaton</button>
-  <button class = "btn btn-secondary js-reset">Reset</button>
-  <button class = "btn btn-info js-switch-propagation">Zmaiana kolejności</button>
+  <div class = "clearfix"></div>
+  <div class="score bg-info p-3 mx-auto w-25 text-center">0 pkt</div>
+  <div class="buttons justify-content-center d-flex my-3">
+    <button class = "btn  btn-primary js-switch-propagation m-2">stop propagaton</button>
+    <button class = "btn btn-secondary js-reset m-2">Reset</button>
+    <button class = "btn btn-info js-switch-order m-2">Zmaiana kolejności</button>
+  </div>
 </div>
   <!-- Bootstrap Bundle with Popper -->
 

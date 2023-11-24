@@ -14,11 +14,12 @@ function addContact() {
         contactPhone.textContent = phoneInput.value;
 
         var deleteButton = document.createElement('button');
+        deleteButton.classList.add('btn', 'btn-danger');
         deleteButton.innerHTML = '&#128465;';
         deleteButton.onclick = function() {
             contactDiv.remove();
         };
-
+        
         contactDiv.appendChild(contactName);
         contactDiv.appendChild(contactPhone);
         contactDiv.appendChild(deleteButton);
@@ -27,17 +28,21 @@ function addContact() {
 
         nameInput.value = '';
         phoneInput.value = '';
+
+        if (contactList.children.length > 0) {
+            contactList.classList.remove('d-none');
+        }
     } else {
         alert('Niepoprawne dane. Sprawdź wprowadzone informacje.');
     }
 }
 
 function validateName(name) {
-    var nameRegex = /^[A-Za-zĄĆĘŁŃÓŚŹŻąćęłńóśźż-]+$/;
+    var nameRegex = /^[A-Za-zĄĆĘŁŃÓŚŹŻąćęłńóśźż\s-]+$/;
     return nameRegex.test(name);
 }
 
 function validatePhone(phone) {
-    var phoneRegex = /^[+]?[0-9 -]{9,12}$/;
+    var phoneRegex = /^[+]?([\d\-] ?){9,12}$/;
     return phoneRegex.test(phone);
 }

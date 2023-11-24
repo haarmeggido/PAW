@@ -4,23 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zad 2</title>
-    <script src="Zad2.js" defer></script>
-    <link rel="stylesheet" href="Zad2.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href = "style.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" defer></script>
+    <script type="text/javascript" src="script.js" defer></script>
 </head>
 <body>
+    <div class="main w-75 mx-auto rounded my-5 border">
+        <h1 class = 'text-center m-5'>Książka telefoniczna</h1>
 
-    <h1>Książka telefoniczna</h1>
+        <div id="contactList" class = "d-none"></div>
 
-    <form id="contactForm">
-        <label for="name">Imię:</label>
-        <input type="text" id="name" name="name" required pattern="[A-Za-zĄĆĘŁŃÓŚŹŻąćęłńóśźż-]+" title="Imię może zawierać tylko litery i znak '-'">
+        <form id="contactForm">
+            <div>
+                <label for="name">Imię kontaktu:</label>
+                <input type="text" id="name" name="name" required pattern="[A-Za-zĄĆĘŁŃÓŚŹŻąćęłńóśźż-]+" title="Imię może zawierać tylko litery i znak '-'">
+            </div>
+            <div>
+                <label for="phone">Numer telefonu:</label>
+                <input type="tel" id="phone" name="phone" required pattern="[+]?[0-9 -]{9,12}" title="Numer telefonu musi zawierać 9-12 cyfr i może zaczynać się od znaku '+'">
+            </div>
+            <button type="button" class="btn btn-dark" onclick="addContact()">Dodaj kontakt</button>
+        </form>
 
-        <label for="phone">Numer telefonu:</label>
-        <input type="tel" id="phone" name="phone" required pattern="[+]?[0-9 -]{9,12}" title="Numer telefonu musi zawierać 9-12 cyfr i może zaczynać się od znaku '+'">
 
-        <button type="button" onclick="addContact()">Dodaj kontakt</button>
-    </form>
-
-    <div id="contactList"></div>
+    </div>
 </body>
 </html>

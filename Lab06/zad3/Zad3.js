@@ -21,29 +21,37 @@ fetch('city.json')
         var malopolskaCities = [];
         var aCities = [];
         let cities4 = cities.slice();
-        var citiesOver80000 = 0;
-        var citiesBelow80000 = 0;
+        var citiesOver80k = [];
+        var citiesBelow80k = [];
+        var citiesOver80kcount = 0;
+        var citiesBelow80kcount = 0;
         var citiesForPArea = [];
         var areAllOver5000 = false;
         var pomorskieOver5000count = 0;
 
         for (var i = 0; i < cities.length; i++){
             if(cities[i]["province"]==="małopolskie"){
-                malopolskaCities.push(`${cities[i]["name"]} `)
+                malopolskaCities.push(` ${cities[i]["name"]}`)
             }
 
             let a_count = 0;
             for(var j = 0; j < cities.length; j++)
                 if(cities[i]["name"][j] === 'a') a_count++;
-            if (a_count === 2) aCities.push(cities[i]["name"]);
+            if (a_count === 2) aCities.push(` ${cities[i]["name"]}`);
 
             if(cities4[i]["people"] > 100000){
                 cities4[i]["name"] += " city";
                 el4.textContent += cities4[i]["name"] + " ";
             }
-
-            if(cities4[i]["people"] > 80000) citiesOver80000++;
-            else if(cities4[i]["people"] < 80000) citiesBelow80000++;
+            
+            if(cities[i]["people"] > 80000){
+                citiesOver80k.push(` ${cities[i]["name"]}`)
+            }
+            if(cities[i]["people"] < 80000){
+                citiesBelow80k.push(` ${cities[i]["name"]}`)
+            }
+            if(cities[i]["people"] > 80000) citiesOver80kcount++;
+            else citiesBelow80kcount++;
 
             if(cities[i]["name"][0].toUpperCase() === 'P') citiesForPArea.push(cities[i]["area"]);
 
@@ -58,8 +66,8 @@ fetch('city.json')
 
         el1.textContent = malopolskaCities;
         el2.textContent = aCities;
-        el3.textContent = cities.sort(sort3)[5]["name"];
-        el5.textContent = citiesOver80000 > citiesBelow80000 ? "Więcej jest miast ponad 80 000 mieszkańców" : "Więcej jest miast poniżej 80 000 mieszkańców";
+        el3.textContent = cities.sort(sort3)[4]["name"];
+        el5.textContent = (citiesOver80kcount > citiesBelow80kcount ? "Więcej jest miast ponad 80 000 mieszkańców" : "Więcej jest miast poniżej 80 000 mieszkańców" + ` ${citiesBelow80kcount} vs ${citiesOver80kcount}`);
         el6.textContent = mean;
         el7.textContent = areAllOver5000 ? "Wszystkie są powyżej 5000 mieszkańców i jest ich " : "Nie wszystkie są powyżej 5000 mieszkańców, ma ich jedyne "
         el7.textContent += pomorskieOver5000count;

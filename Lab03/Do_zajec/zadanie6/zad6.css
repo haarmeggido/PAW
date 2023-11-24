@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: column;
 
-    transition: width 0.3s;
+    transition: width 3s;
 }
 .nav-element{
     display: grid;
@@ -19,8 +19,8 @@
     justify-content: end;
     border-radius: 8px;
 
-    transition: grid-template-columns 0.3s;
-    opacity: 0.3s;
+    transition: all 3s;
+
 }
 .nav-element:hover{
     background-color: rgb(117, 176, 254);

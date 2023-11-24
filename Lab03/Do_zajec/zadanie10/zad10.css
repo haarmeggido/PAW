@@ -138,7 +138,6 @@ input.open[type="radio"]:checked+label.open {
     background-color: rgb(230, 69, 63);
 }
 
-
 input.open[type="radio"]:checked+label.open:first-of-type {
     border-radius: 20px 20px 0 0;
 }

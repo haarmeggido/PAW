@@ -12,12 +12,14 @@ function js_switch_mode(){
     const switch_button = document.querySelector('.switch');
     if(click_switch){
         switch_button.innerHTML = "switch on";
+        document.querySelector(".clickVal").innerHTML = 'Licznik włączony';
     }
     else{
         switch_button.innerHTML = "switch off";
         clicks = 0;
         localStorage.setItem("clicks", '0');
         updateClicks();
+        document.querySelector(".clickVal").innerHTML = 'Licznik wyłączony';
     }
 }
 
