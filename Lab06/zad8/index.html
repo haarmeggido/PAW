@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zad8</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="styles.css" rel="stylesheet" type="text/css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" defer></script>
+  <script type="text/javascript" src="script.js" defer></script>
+  <style>
+    #countriesTable {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    #countriesTable thead th {
+      padding: 10px;
+      background-color: #eee;
+      border: 1px solid #ddd;
+      cursor: pointer;
+    }
+
+    #countriesTable tbody td {
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+
+    #countriesTable tbody tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    #countriesTable tbody tr:hover {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+
+  <div class= 'container container-fluid'>
+    <table id = 'countriesTable'>
+      <tbody>
+
+      </tbody>
+    </table>
+</div>
+
+  <script>
+    // JavaScript code for filtering, sorting, and pagination
+    // Fetch JSON data and populate the table dynamically
+    fetch('./files/all.json')
+      .then(response => response.json())
+      .then(data => {
+        const tableBody = document.querySelector('#countriesTable tbody');
+        const subregions = {};
+
+        // Group countries by subregion
+        data.forEach(country => {
+          const subregion = country.subregion;
+          if (!subregions[subregion]) {
+            subregions[subregion] = [];
+          }
+          subregions[subregion].push(country);
+        });
+
+        // Display subregions and their details
+        for (const subregion in subregions) {
+          const countries = subregions[subregion];
+          const totalPopulation = countries.reduce((total, country) => total + country.population, 0);
+          const totalArea = countries.reduce((total, country) => total + country.area, 0);
+
+          const subregionAccordionItem = document.createElement('div');
+          subregionAccordionItem.classList.add('accordion-item');
+
+          const subregionAccordionHeader = document.createElement('h2');
+          subregionAccordionHeader.classList.add('accordion-header');
+          subregionAccordionHeader.innerHTML = `
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#${subregion.replace(/\s/g, '')}">${subregion}</button>
+          `;
+          subregionAccordionItem.appendChild(subregionAccordionHeader);
+
+          const subregionAccordionCollapse = document.createElement('div');
+          subregionAccordionCollapse.classList.add('accordion-collapse', 'collapse');
+          subregionAccordionCollapse.id = subregion.replace(/\s/g, '');
+          subregionAccordionCollapse.innerHTML = `
+            <div class="accordion-body">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Capital</th>
+                    <th>Population</th>
+                    <th>Area</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Country data will be dynamically populated here -->
+                </tbody>
+              </table>
+              <div>Total Population: ${totalPopulation}</div>
+              <div>Total Area: ${totalArea}</div>
+            </div>
+          `;
+          subregionAccordionItem.appendChild(subregionAccordionCollapse);
+
+          tableBody.appendChild(subregionAccordionItem);
+
+          // Display countries within the subregion
+          const subregionTableBody = subregionAccordionCollapse.querySelector('tbody');
+          countries.forEach(country => {
+            const countryRow = document.createElement('tr');
+            countryRow.innerHTML = `
+              <td>${country.name.common}</td>
+              <td>${country.capital}</td>
+              <td>${country.population}</td>
+              <td>${country.area}</td>
+            `;
+            subregionTableBody.appendChild(countryRow);
+          });
+        }
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+.screen{
+  position:absolute;
+  top:10%;
+  left:10%;
+  width:80%;
+  height:80%;
+  background-color: #c4c4c4;
+}
+.red_dot{
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:10px;
+  height:10px;
+  background-color: red;
+  border-radius: 50%;
+}
+.message{
+  font-size: larger;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+}
