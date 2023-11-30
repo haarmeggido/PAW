@@ -18,23 +18,22 @@ var hasDigitBool = false;
 
 const confirm_password = document.getElementById("confirm_password");
 const new_password = document.getElementById("new_password");
-confirm_password.addEventListener("keypress", function(event) {
-    // console.log(`key=${event.key},code=${event.code}`);
+function handleEnterKeyPress(event) {
     // If the user presses the "Enter" key on the keyboard
     if (event.key === "Enter") {
-      // Cancel the default action, if needed
-       event.preventDefault();
+        // Cancel the default action, if needed
+        event.preventDefault();
 
-       //save inputs
+        // Save inputs
         var new_password_value = document.getElementById("new_password").value;
         var confirm_password_value = document.getElementById("confirm_password").value;
-       
-         //check if password is valid
-         if (new_password_value != confirm_password_value) {
+
+        // Check if password is valid
+        if (new_password_value != confirm_password_value) {
             alert("Passwords do not match");
             return;
-         } else{
-            //update checkboxes with id's length_check, capital_check, special_check, number_check
+        } else {
+            // Update checkboxes with id's length_check, capital_check, special_check, number_check
             atLeast8charsBool = atLeast8Chars(new_password_value);
             hasUpperCaseBool = hasUpperCase(new_password_value);
             hasSpecialCharBool = hasSpecialChar(new_password_value);
@@ -43,13 +42,16 @@ confirm_password.addEventListener("keypress", function(event) {
             document.getElementById("capital_check").checked = hasUpperCaseBool;
             document.getElementById("special_check").checked = hasSpecialCharBool;
             document.getElementById("number_check").checked = hasDigitBool;
-         }
+        }
 
-        //clear inputs
+        // Clear inputs
         document.getElementById("new_password").value = "";
         document.getElementById("confirm_password").value = "";
     }
-  }); 
+}
+
+confirm_password.addEventListener("keypress", handleEnterKeyPress);
+new_password.addEventListener("keypress", handleEnterKeyPress);
 
 function togglePasswordVisibility(input_id){
     var input = document.getElementById(input_id);

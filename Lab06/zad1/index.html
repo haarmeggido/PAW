@@ -5,21 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link href = "style.css" rel="stylesheet" type="text/css">
+  <link href = "styles.css" rel="stylesheet" type="text/css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" defer></script>
   <script type="text/javascript" src="script.js" defer></script>
 
   <title>Hello, world!</title>
 </head>
 <body>
-<div >
+<div class = 'container'>
   <div class = "container container-fluid justify-content-center align-items-center justify-content-start w-25 my-3">
     <div class="outside bg-primary p-3 text-center rounded border">
-      +1 pkt
+      <div class = 'blue-points'> 1 point </div>
       <div class="middle bg-danger p-3 text-center rounded border">
-        +2pkt
+        <div class = 'red-points'> 2 points</div>
         <div class="inside bg-warning p-3 text-center rounded border">
-          +5pkt
+          <div class = 'yellow-points'> 3 points</div>
 
         </div>
       </div>
@@ -31,6 +31,9 @@
     <button class = "btn  btn-primary js-switch-propagation m-2">stop propagaton</button>
     <button class = "btn btn-secondary js-reset m-2">Reset</button>
     <button class = "btn btn-info js-switch-order m-2">Zmaiana kolejności</button>
+  </div>
+  <div class = "container info-js text-center text-white">
+
   </div>
 </div>
   <!-- Bootstrap Bundle with Popper -->
