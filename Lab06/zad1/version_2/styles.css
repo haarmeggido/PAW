@@ -1,0 +1,97 @@
+:root {
+
+}
+
+* {
+    font-family: Arial, serif;
+    font-size: x-large;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.box-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.box {
+    text-align: center;
+    display: block;
+    padding: 0 4vh 4vh 4vh;
+}
+
+.block-one {
+    background: darkgrey;
+    border: 1px solid black;
+}
+
+.block-two {
+    background: red;
+}
+
+.block-three {
+    background: yellow;
+}
+
+.control {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    min-height: 5vh;
+    margin: 5vh 5vw;
+}
+
+.start-stop {
+    font-size: medium;
+}
+
+.reset {
+
+    font-size: medium;
+}
+
+.change-order {
+
+    font-size: medium;
+}
+
+.commands {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-height: 10vh;
+    border: 1px solid black;
+    margin: 0 5vw;
+}
+
+.console-log {
+    flex: 1;
+    border: 1px solid black;
+    font-size: medium !important;
+}
+
+.counter {
+    flex: 1;
+    background: darkgrey;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.show {
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
