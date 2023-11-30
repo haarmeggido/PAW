@@ -15,9 +15,9 @@ fetch('files/all.json')
             } else if (sortBy === 'Capital') {
                 return extractedData.sort((a, b) => (sortFlag ? 1 : -1) * (a.capital || '').localeCompare(b.capital || ''));
             }
-                return extractedData.sort((a, b) => (sortFlag ? 1 : -1) * ((b[sortBy] || 0) - (a[sortBy] || 0)));
+            return extractedData.sort((a, b) => (sortFlag ? 1 : -1) * ((b[sortBy] || 0) - (a[sortBy] || 0)));
         }
-        
+
         const name_constraint = document.getElementById("nameFilter");
         const capital_constraint = document.getElementById("capitalFilter");
         const population_constraint = document.getElementById("populationFilter");
@@ -44,15 +44,7 @@ fetch('files/all.json')
         function toUpperCase(item) {
             return item.toUpperCase();
         }
-        //debugCity
 
-        // const searchElement = document.getElementById('js-search');
-        
-        // searchElement.addEventListener('click', (event) => {
-        //     console.log("clicked")
-        //     const filteredData = filterData();
-        //     console.log( filteredData);
-        // });
         function renderData(data, sortBy, sortFlag) {
             const tableDiv = document.getElementById("table-div");
             tableDiv.innerHTML = '';
@@ -71,8 +63,16 @@ fetch('files/all.json')
 
             const accordion = document.createElement('div');
             accordion.classList.add('accordion');
+            accordion.setAttribute('id', 'mainAccordion');
+
+            let id = 0;
             for (const subregion in subregions) {
                 const accordionItem = document.createElement('div');
+                accordionItem.classList.add(`page${Math.floor(id / 5)}`);
+                if (id >= 5) {
+                    accordionItem.style.display = 'none'; // Hide accordion items for other pages
+                }
+                id += 1;
                 accordionItem.classList.add('accordion-item');
 
                 const accordionHeader = document.createElement('div');
@@ -130,6 +130,29 @@ fetch('files/all.json')
             }
 
             tableDiv.appendChild(accordion);
+            renderPagination(Math.floor(id / 5));
+        }
+
+        function renderPagination(pages) {
+            const paginationElement = document.getElementById('pagination-div');
+            paginationElement.innerHTML = ''; // Clear existing pagination buttons
+
+            for (let i = 0; i < pages; i++) {
+                const pageButton = document.createElement('button');
+                pageButton.textContent = i + 1;
+                pageButton.classList.add('btn', 'btn-primary', 'mx-1'); // Add Bootstrap classes
+                pageButton.addEventListener('click', () => {
+                    const accordionItems = document.querySelectorAll('.accordion-item');
+                    accordionItems.forEach(item => {
+                        if (item.classList.contains(`page${i}`)) {
+                            item.style.display = 'block'; // Show accordion item for selected page
+                        } else {
+                            item.style.display = 'none'; // Hide accordion items for other pages
+                        }
+                    });
+                });
+                paginationElement.appendChild(pageButton);
+            }
         }
 
         const nameSort = document.getElementById("nameSort");
@@ -164,8 +187,7 @@ fetch('files/all.json')
             renderData(extractedData, 'population', populationSortFlag);
             if (populationSortFlag) {
                 populationSort.textContent = 'Population ▼';
-            }
-            else {
+            } else {
                 populationSort.textContent = 'Population ▲';
             }
         });
@@ -178,6 +200,7 @@ fetch('files/all.json')
                 areaSort.textContent = 'Area ▲';
             }
         });
+
     })
     .catch(error => {
         console.error('Error:', error);

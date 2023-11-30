@@ -4,67 +4,58 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zad8</title>
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link href="styles.css" rel="stylesheet" type="text/css">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" defer></script>
-  <script type="text/javascript" src="script.js" defer></script>
-</head>
-<body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Countries</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav "> 
-        <li class="nav-item">
-          <a class="nav-link" href="#"></a>
-          <input type="text" class="form-control" id="nameFilter" placeholder="Includes">
-          <button class="btn btn-primary" id="nameSort">Name</button>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"></a>
-          <input type="text" class="form-control" id="capitalFilter" placeholder="Includes">
-          <button class="btn btn-primary" id="capitalSort">Capital</button>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"></a>
-          <input type="text" class="form-control" id="populationFilter" placeholder="At least">
-          <button class="btn btn-primary" id="populationSort">Population</button>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"></a>
-          <input type="text" class="form-control" id="areaFilter" placeholder="At least">
-          <button class="btn btn-primary" id="areaSort">Area</button>
-        </li>
-      </ul>
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" defer></script>
+    <script type="text/javascript" src="script.js" defer></script>
+  </head>
+  <body style="background-color: rgb(88, 88, 88)c4c;">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Countries</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav "> 
+          <li class="nav-item px-2">
+            <a class="nav-link" href="#"></a>
+            <input type="text" class="form-control" id="nameFilter" placeholder="Includes">
+            <button class="btn btn-primary" id="nameSort">Name</button>
+          </li>
+          <li class="nav-item px-2">
+            <a class="nav-link" href="#"></a>
+            <input type="text" class="form-control" id="capitalFilter" placeholder="Includes">
+            <button class="btn btn-primary" id="capitalSort">Capital</button>
+          </li>
+          <li class="nav-item px-2">
+            <a class="nav-link" href="#"></a>
+            <input type="text" class="form-control" id="populationFilter" placeholder="At least">
+            <button class="btn btn-primary" id="populationSort">Population</button>
+          </li>
+          <li class="nav-item px-2">
+            <a class="nav-link" href="#"></a>
+            <input type="text" class="form-control" id="areaFilter" placeholder="At least">
+            <button class="btn btn-primary" id="areaSort">Area</button>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<!-- <div class= 'container container-fluid'>
-  <button id = "js-search" class = 'btn btn-primary'>search</button>
-</div> -->
+    <div class="container my-5" id="table-div">
+      <!-- The accordions go here -->
+    </div>
 
-<div class="container" id="table-div">
-</div>
-<div class = container id = "pagination-div"></div>
-<!-- <nav aria-label="Page navigation">
-  <ul class="pagination">
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item"><a class="page-link" href="#">4</a></li>
-    <li class="page-item"><a class="page-link" href="#">5</a></li>
-  </ul>
-</nav> -->
+    <div class="container d-flex justify-content-center px-2 my-3" id="pagination-div">
+      <!-- The page buttons go here -->
+    </div>
 
+    <script>
 
-    
-  <script>
-
-  </script>
-</body>
-</html>
+    </script>
+  </body>
+  </html>
