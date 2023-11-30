@@ -111,11 +111,11 @@ updateScore = () => {
 }
 checkScore = () => {
   if(score > 30){
-    yellowDiv.classList.add('d-none')
+    //yellowDiv.classList.add('d-none')
     yellowDiv.classList.add('disabled')
   }
   if(score > 50){
-    redDiv.classList.add('d-none')
+    //redDiv.classList.add('d-none')
     redDiv.classList.add('disabled')
   }
 }

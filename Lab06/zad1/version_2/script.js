@@ -29,15 +29,15 @@ const controlThresholds = function () {
     if (sum >= bigThreshold) {
         blockTwo.removeEventListener('click', two, order)
         blockTwo.style.backgroundColor = 'black'
-        addToLogger("Removed event listener from second button.")
+        updateMessage("Removed event listener from second button.")
     } else if (sum >= smallThreshold) {
         blockThree.removeEventListener('click', three, order)
         blockThree.style.backgroundColor = 'black'
-        addToLogger("Removed event listener from third button.")
+        updateMessage("Removed event listener from third button.")
     }
 }
 
-const addToLogger = function (logMessage) {
+const updateMessage = function (logMessage) {
     const newLog = document.createElement('p')
 
     newLog.innerText = logMessage
@@ -82,7 +82,7 @@ const one = (event) => {
 
     controlThresholds()
 
-    addToLogger("Clicked on the gray block. Added to sum ${points.first}.")
+    updateMessage(`Clicked on the gray block. Added to sum ${points.first}.`)
 }
 const two = (event) => {
     sum += points.second
@@ -94,7 +94,7 @@ const two = (event) => {
 
     controlThresholds()
 
-    addToLogger("Clicked on the red block. Added to sum ${points.second}.")
+    updateMessage(`Clicked on the red block. Added to sum ${points.second}.`)
 }
 const three = (event) => {
     sum += points.third
@@ -106,7 +106,7 @@ const three = (event) => {
 
     controlThresholds()
 
-    addToLogger("Clicked on the yellow block. Added to sum ${points.third}.")
+    updateMessage(`Clicked on the yellow block. Added to sum ${points.third}.`)
 }
 blockOne.addEventListener('click', one, order)
 blockTwo.addEventListener('click', two, order)
@@ -114,7 +114,7 @@ blockThree.addEventListener('click', three, order)
 
 startStopButton.addEventListener('click', () => {
     propagate = !propagate
-    addToLogger("Changed the propagation to: ${propagate}.")
+    updateMessage(`Changed the propagation to: ${propagate}.`)
 })
 resetButton.addEventListener('click', () => {
     sum = 0
@@ -132,9 +132,9 @@ resetButton.addEventListener('click', () => {
     blockThree.addEventListener('click', three, order)
 
     clearLogger()
-    addToLogger("Restarted configuration.")
+    updateMessage("Restarted configuration.")
 })
 changeOrderButton.addEventListener('click', () => {
     changeOrder()
-    addToLogger("Changed the order of the event listeners.")
+    updateMessage("Changed the order of the event listeners.")
 })

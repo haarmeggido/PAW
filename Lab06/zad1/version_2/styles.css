@@ -1,8 +1,14 @@
-:root {
-
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    background-color: #f3f3f3;
 }
-
 * {
+    
     font-family: Arial, serif;
     font-size: x-large;
 }
