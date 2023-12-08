@@ -36,7 +36,7 @@ fetch("files/json/file_list.json")
     //saveImages();
   })
 
-let images_number = 10;
+let images_number = 20; // can alter the number of max images displayed
 images_folder = 'files/generated/';
 images_list_for_modal = [];
 function createGallery() {

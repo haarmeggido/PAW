@@ -23,7 +23,7 @@ scoring = {
   red: 1,
   yellow: 3
 }
-blueDiv.addEventListener('click', () => {
+blueDiv.addEventListener('click', (event) => {
   if (propagation){
     blueclick = true
     score += scoring.blue
@@ -31,10 +31,13 @@ blueDiv.addEventListener('click', () => {
     updateScore()
     updateInfo()
   }
+  else{
+    event.stopPropagation()
+  }
 })
 
 
-redDiv.addEventListener('click', () => {
+redDiv.addEventListener('click', (event) => {
   if (propagation){
   redclick = true
 
@@ -42,14 +45,20 @@ redDiv.addEventListener('click', () => {
     console.log('red', score)
     updateScore()
   }
+  else{
+    event.stopPropagation()
+  }
 })
 
-yellowDiv.addEventListener('click', () => {
+yellowDiv.addEventListener('click', (event) => {
   if (propagation){
     yellowclick = true
     score += scoring.yellow
     console.log('yellow', score)
     updateScore()
+  }
+  else{
+    event.stopPropagation()
   }
 })
 
@@ -63,6 +72,12 @@ switchPropagationButton.addEventListener('click', () => {
   propagation = !propagation
 
   console.log('switch propagation')
+  if(propagation){
+    switchPropagationButton.innerHTML = "Propagation: ON"
+  }
+  else{
+    switchPropagationButton.innerHTML = "Propagation: OFF"
+  }
 })
 
 resetButton.addEventListener('click', () => {

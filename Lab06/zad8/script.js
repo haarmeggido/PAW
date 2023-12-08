@@ -70,7 +70,7 @@ fetch('files/all.json')
                 const accordionItem = document.createElement('div');
                 accordionItem.classList.add(`page${Math.floor(id / 5)}`);
                 if (id >= 5) {
-                    accordionItem.style.display = 'none'; // Hide accordion items for other pages
+                    accordionItem.style.display = 'none'; 
                 }
                 id += 1;
                 accordionItem.classList.add('accordion-item');
@@ -82,7 +82,7 @@ fetch('files/all.json')
                 accordionHeaderButton.classList.add('accordion-button', 'collapsed');
                 accordionHeaderButton.setAttribute('type', 'button');
                 accordionHeaderButton.setAttribute('data-bs-toggle', 'collapse');
-                accordionHeaderButton.setAttribute('data-bs-target', `#collapse${subregion.replace(/\s/g, '')}`); // Remove whitespace from subregion name
+                accordionHeaderButton.setAttribute('data-bs-target', `#collapse${subregion.replace(/\s/g, '')}`); // fix - Remove whitespace from subregion name
 
                 const subregionData = subregions[subregion];
                 const totalPopulation = subregionData.reduce((total, item) => total + item.population, 0);
@@ -140,14 +140,14 @@ fetch('files/all.json')
             for (let i = 0; i < pages; i++) {
                 const pageButton = document.createElement('button');
                 pageButton.textContent = i + 1;
-                pageButton.classList.add('btn', 'btn-primary', 'mx-1'); // Add Bootstrap classes
+                pageButton.classList.add('btn', 'btn-primary', 'mx-1');
                 pageButton.addEventListener('click', () => {
                     const accordionItems = document.querySelectorAll('.accordion-item');
                     accordionItems.forEach(item => {
                         if (item.classList.contains(`page${i}`)) {
-                            item.style.display = 'block'; // Show accordion item for selected page
+                            item.style.display = 'block';
                         } else {
-                            item.style.display = 'none'; // Hide accordion items for other pages
+                            item.style.display = 'none'; 
                         }
                     });
                 });
