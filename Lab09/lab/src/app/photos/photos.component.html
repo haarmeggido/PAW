@@ -1,0 +1,27 @@
+<div class="container dark-bg">
+  <div class="row">
+    @for (val of photos; track val.id) {
+      <div class="col-md-4 col-sm-6 col-lg-3 my-4">
+        <div class="card">
+          <div class="card-header">
+            Id - {{val.id}}
+          </div>
+          <div class="card-body text-center"> <!-- Added text-center class -->
+            <div class="card-text">
+              User Id - {{val.albumId}}
+            </div>
+            <div class="card-text">
+              Title - {{val.title}}
+            </div>
+            <div class="card-image">
+              <img class="img-thumbnail" src="{{val.thumbnailUrl}}" alt="{{val.title}}">
+            </div>
+            <div class="card-footer">
+              <a class="btn btn-primary" href="http://localhost:4200/photos/{{val.id}}">Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>
