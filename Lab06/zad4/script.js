@@ -31,5 +31,11 @@ document.addEventListener('click', (event) => {
   } else {
     // Display an alert if the click occurred outside the "screen" div
     alert(`Click outside the screen!\n position: ${clickX}, ${clickY}`);
+    const message = document.querySelector('.message');
+    //display coords on the place of click
+    message.textContent = `position: ${clickX}, ${clickY}`;
+    message.style.top = `${clickY}px`;
+    message.style.left = `${clickX}px`;
+
   }
 });

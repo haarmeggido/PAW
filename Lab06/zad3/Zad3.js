@@ -30,20 +30,21 @@ fetch('city.json')
         var pomorskieOver5000count = 0;
 
         for (var i = 0; i < cities.length; i++){
+            // 1
             if(cities[i]["province"]==="małopolskie"){
                 malopolskaCities.push(` ${cities[i]["name"]}`)
             }
-
+            // 2
             let a_count = 0;
             for(var j = 0; j < cities.length; j++)
                 if(cities[i]["name"][j] === 'a') a_count++;
             if (a_count === 2) aCities.push(` ${cities[i]["name"]}`);
-
+            // 4
             if(cities4[i]["people"] > 100000){
                 cities4[i]["name"] += " city";
                 el4.textContent += cities4[i]["name"] + " ";
             }
-            
+            // 5
             if(cities[i]["people"] > 80000){
                 citiesOver80k.push(` ${cities[i]["name"]}`)
             }
@@ -52,9 +53,9 @@ fetch('city.json')
             }
             if(cities[i]["people"] > 80000) citiesOver80kcount++;
             else citiesBelow80kcount++;
-
+            //6
             if(cities[i]["name"][0].toUpperCase() === 'P') citiesForPArea.push(cities[i]["area"]);
-
+            //7
             if(cities[i]["province"]==="pomorskie"){
                 if(cities[i]["people"] > 5000) pomorskieOver5000count++;
                 else areAllOver5000 = false;
@@ -62,7 +63,7 @@ fetch('city.json')
         }
 
         let sum = citiesForPArea.reduce((a, b) => a + b, 0);
-        let mean = sum / citiesForPArea.length;
+        let mean = (sum / citiesForPArea.length).toFixed(3);
 
         el1.textContent = malopolskaCities;
         el2.textContent = aCities;
